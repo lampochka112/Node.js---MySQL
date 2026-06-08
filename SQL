@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS testdb;
+USE testdb;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    age INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Примеры данных
+INSERT INTO users (name, email, age) VALUES
+('Иван Петров', 'ivan@example.com', 25),
+('Мария Сидорова', 'maria@example.com', 30),
+('Алексей Иванов', 'alex@example.com', 28);
